@@ -7,6 +7,8 @@ const btnEnviar = document.getElementById("enviar");
 
 const formularioEnviar = document.getElementById('enviar-mail');
 
+const resetBtn = document.getElementById('resetBtn');
+
 //event lisener
 enventListener();
 
@@ -24,6 +26,8 @@ function enventListener()
   
     //btn enviar
     formularioEnviar.addEventListener('submit' ,enviarEmail);
+
+    resetBtn.addEventListener('click',resetearFormulario);
 }
 
 //funciones 
@@ -123,4 +127,11 @@ function validarEmail(campo)
         campo.style.borderBottomColor = 'red';
         campo.classList.add('error');
     }
+}
+
+function resetearFormulario(e)
+{
+    formularioEnviar.reset();
+    e.preventDefault();
+    
 }
